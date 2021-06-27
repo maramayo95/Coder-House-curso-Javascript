@@ -29,3 +29,7 @@ switch (producto){
         
    
 }
+
+//const calculoCero = (producto,cantidad) => producto * cantidad
+//const resultadoCero = calculoCero(producto,cantidad)
+//console.log(resultadoCero);
