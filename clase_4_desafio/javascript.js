@@ -22,4 +22,3 @@ let imc = peso/(Math.pow(estatura,2));
 
 
 
-
