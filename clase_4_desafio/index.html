@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular indice de masa Corporal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar sticky-top">
+        <div class="container-fluid d-flex justify-content-center">
+          <a href="index.html" class="navbar-brand"><img src="./img/logo-circulo.png" alt="Logo" height="100px"></a>
+        </div>
+    </nav>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img class="img-fluid" src="./img/carrousel/carrouselUno.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block ">
+              <h1>Calculá Tu indice de Masa corporal</h1>
+              <h2>Mente Sana, Cuerpo Sano</h2>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img class="img-fluid" src="./img/carrousel/carrouselDos.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Conoce la opinion de nuestros Especialistas</h2>
+              <button type="button" class="btn fade-in">Haz Click Aquí</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="img-fluid" src="./img/carrousel/carrouselTres.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Contactanos para recibir mas información</h2>
+              <button type="button" class="btn fade-in">Contactanos</button>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+     <section class="info">
+      <div class="container pt-3 py-4">
+      <h3>¿Que es el indice de masa corporal?</h3>
+      <p>El índice de masa corporal (IMC) es un número que se calcula con base en el peso y la estatura de la persona. El IMC es un indicador de la gordura bastante confiable para la mayoría de las personas. El IMC no mide la grasa corporal directamente, pero las investigaciones han mostrado que tiene una correlación con mediciones directas de la grasa corporal, tales como el pesaje bajo el agua y la absorciometría dual de rayos X (DXA, por sus siglas en inglés).1, 2 El IMC se puede considerar una alternativa para mediciones directas de la grasa corporal. Además, es un método económico y fácil de realizar para detectar categorías de peso que pueden llevar a problemas de salud.</p>
+      </div>
+
+      <div class="container pt-3 py-4">
+      <h3>¿Como se usa el IMC?</h3>
+      <p>El IMC se usa como una herramienta de detección para identificar posibles problemas de salud de los adultos. Sin embargo, el IMC no es una herramienta de diagnóstico. Por ejemplo, una persona puede tener un alto IMC, pero para determinar si el exceso de peso es un riesgo para la salud, un proveedor de atención médica necesitará realizar evaluaciones adicionales. Estas evaluaciones pueden incluir la medición del grosor de los pliegues cutáneos, evaluaciones de la alimentación, la actividad física, los antecedentes familiares y otras pruebas de salud que sean adecuadas.</p>
+    </div>
+
+    </section>
+ 
+    <section class="container">
+      <h2 class="mt-3 d-flex justify-content-center">Nuestros Especialistas</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card mt-3 mb-3">
+            <div class="ih-item square effect15 left_to_right">
+            <img src="./img/cards/doctorUno500.jpg" class="card-img-top" alt="...">
+          </div>
+            <div class="card-body">
+              <h5 class="card-title">Dra. Juana Gonzalez</h5>
+              <p class="pCard">Universidad de Buenos Aires</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mt-3 mb-3">
+            <img src="./img/cards/doctor3500.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Simon Goldfard</h5>
+              <p class="pCard">Universidad del Salvador</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mt-3 mb-3">
+            <img src="./img/cards/doctorDos500.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dr. Pablo Perez</h5>
+              <p class="pCard">Universidad de Sao Paulo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+    <!-- Copyrights -->
+    <div class="py-1">
+      <div class="container text-center">
+        <p class="text-muted mb-0 py-2">©2021 Made By Blane</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End -->    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="javascript.js"></script>
+
+</body>
+</html>

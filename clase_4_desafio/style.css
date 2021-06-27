@@ -1,0 +1,106 @@
+.navbar {
+  background-color: #31414b;
+}
+body {
+  background-color: #e2e2e2;
+}
+h1{
+    color: rgba(255, 255, 255, 0.911);
+    font-family: 'Bebas Neue', cursive;
+    font-size:4rem;
+    animation-duration: 2s;
+    animation-name: slidein;
+    text-shadow: 3px 2px rgba(0, 0, 0, 0.932);
+}
+
+h2{
+    font-family: 'Bebas Neue', cursive;
+    color: rgba(255, 255, 255, 0.89);
+    font-size: 2.5rem;
+    animation-duration: 2s;
+    animation-name: slidein;
+    text-shadow: 2px 2px rgb(0, 0, 0.932);
+}
+
+h3 {
+    font-family:'Bebas Neue', cursive;
+    color: rgba(255, 255, 255, 0.89);
+    font-size: 2rem;
+    text-shadow: 2px 1px rgba(0, 0, 0, 0.932);
+}
+
+h5 {
+  font-family:'Bebas Neue', cursive;
+  color: rgba(255, 255, 255, 0.89);
+  font-size: 2rem;
+  text-shadow: 2px 1px rgba(0, 0, 0, 0.932);
+  text-align:center;
+
+}
+
+.info {
+    background-color: #6f879c;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.822);
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-weight: thin;
+  }
+
+  .btn {
+    
+    background-color: #ffbf57ee;
+    color:rgba(255, 255, 255, 0.822);
+    font-family: 'Bebas Neue', cursive;
+    font-size:1.5rem;
+
+  }
+
+  .fade-in {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+  }
+  
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .btn:hover {
+    color: #fde1b4f1;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+ .pCard {
+   color: #0c1820;
+   text-align:center;
+  
+ } 
+  footer {
+    background-color:#0c1820;
+  }
+
+  .card-body {
+    background-color:#bdc6ca;
+
+  }
+
