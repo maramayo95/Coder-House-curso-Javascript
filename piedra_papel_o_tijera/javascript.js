@@ -1,10 +1,13 @@
 let usuario = prompt("Elija si quiere : piedra , papel o tijera");
 console.log(usuario);
 
-// Piedra = 1 , Papel = 2 , Tijera = 3 
+
+// Este codigo lo utilizo para que la computadora asigne de forma aleatoria un numero que este entre el 1 y el 3 
 let computadora = Math.floor(Math.random()*3) + 1;
 console.log(computadora);
 
+// Asigne los siguientes resultados acorde  a la devolución que me de la computadora Piedra = 1 , Papel = 2 , Tijera = 3 
+// Establecí las condiciones segun la elección del usuario y la de la maquina.
 if ((computadora == 1) && (usuario == "piedra")){
     alert("La computadora eligió piedra y vos tambien. Hay empate")
 } else if  ((computadora == 1) && (usuario =="papel")) {
