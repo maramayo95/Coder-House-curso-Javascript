@@ -24,7 +24,7 @@ if ((computadora == 1) && (usuario == "piedra")){
 } else if ((computadora == 3) && (usuario == "tijera")){
     alert("La computadora eligió tijera y vos también. Han empatado")
 } else {
-    alert ("Escribi piedra papel o tijera, sabes leer? ")
+    alert ("Escribi piedra papel o tijera. ")
 }
 
 
