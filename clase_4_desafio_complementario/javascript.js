@@ -14,5 +14,5 @@ const impuestos = (resultado,iva) => (resultado +(resultado * iva));
 // Resultado final podría resolverse llamando a la función cuotasConIva,
 // que a su vez llame a como primer parámetro a la función cuotasSinIva, y como
 // segundo parámetro a la variable iva
-const resultadoFinal = impuestos(resultado,iva);
+const resultadoFinal = impuestos(calculoUno(precio,cuotas), iva)
 console.log("Resultado de cuotas con IVA" + " " + resultadoFinal);
