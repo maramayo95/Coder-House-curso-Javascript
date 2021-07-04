@@ -6,29 +6,29 @@ class anime {
     }
     
     agregar(){
-        console.log("Has agregado al carrito el anime")
+        console.log(`Has agregado al carrito el anime ${this.nombre}`)
     }
 
     eliminar(){
-        console.log("Has quitado de tu carrito de compras el anime")
+        console.log(`Has quitado de tu carrito de compras el anime ${this.nombre}`)
     }
 
     comprar(){
-        console.log("Has realizado la compra del anime")
+        console.log(`Has realizado la compra del anime ${this.nombre}`)
     }
 
     toString(){
-        console.log(`Usted ha seleccionado la pelicula: ${this.nombre} \n  Año: ${this.year} \n  Genero: ${this.genero}`)
+        console.log(`Usted ha seleccionado el producto \n  Anime: ${this.nombre} \n  Año: ${this.year} \n  Genero: ${this.genero}`)
     }
 
 }
 
-const pelicula1 = new anime('Psycho Pass', 2017, 'Mechas');
+const anime1 = new anime('Psycho Pass', 2017, 'Mechas');
 
-pelicula1.toString();
-pelicula1.agregar();
-pelicula1.eliminar();
-pelicula1.agregar();
-pelicula1.comprar();
+anime1.toString();
+anime1.agregar();
+anime1.eliminar();
+anime1.agregar();
+anime1.comprar();
 
  
