@@ -23,5 +23,12 @@ class anime {
 
 }
 
-const pelicula1 = new pelicula('Psycho Pass', 2017, 'Mechas');
+const pelicula1 = new anime('Psycho Pass', 2017, 'Mechas');
+
+pelicula1.toString();
+pelicula1.agregar();
+pelicula1.eliminar();
+pelicula1.agregar();
+pelicula1.comprar();
+
  
