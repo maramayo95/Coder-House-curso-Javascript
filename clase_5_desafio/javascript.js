@@ -1,3 +1,4 @@
+//Cree la clase para cada producto Anime que tenga la pagina
 class anime {
     constructor (nombre, year, genero) {
     this.nombre = nombre;
@@ -5,6 +6,8 @@ class anime {
     this.genero = genero;
     }
     
+    //Mediante metodos determino que funciones se pueden realizar con el objeto a crear 
+    // Se puede agregar al carrito , eliminar, Comprar u obtener información sobre cada objeto
     agregar(){
         console.log(`Has agregado al carrito el anime ${this.nombre}`)
     }
