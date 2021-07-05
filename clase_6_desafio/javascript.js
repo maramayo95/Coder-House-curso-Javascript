@@ -1,39 +1,29 @@
-//Cree la clase para cada producto Anime que tenga la pagina
-class anime {
-    constructor (nombre, year, genero) {
-    this.nombre = nombre;
-    this.year = year;
-    this.genero = genero;
+class producto{
+    constructor(nombre, cantidad){
+        this.nombre = nombre;
+        this.cantidad = parseInt(cantidad);
     }
-    
-    //Mediante metodos determino que funciones se pueden realizar con el objeto a crear 
-    // Se puede agregar al carrito , eliminar, Comprar u obtener información sobre cada objeto
-
     toString(){
-        console.log(`Usted ha seleccionado el producto \n  Anime: ${this.nombre} \n  Año: ${this.year} \n  Genero: ${this.genero}`)
+        return `Agregaste ${this.nombre} al carrito`;
     }
-
 }
 
- 
-
-const anime1 = new anime('Psycho Pass', 2017, 'Mechas');
-const anime2 = new anime('Ghost in the Shell',1995,'Mechas');
-const anime3 = new anime('Akira',1988,'Mechas');
-
-
-let counter = 0;
-let productos = parseInt(prompt("Cuantos productos desea llevar?"));
+let contador = 0;
+let cantidadProductos = parseInt(prompt("Indique cuantos productos distintos que desea comprar"));
 const carrito = [];
 
-
-
-while(counter < productos) {
-    const peticionCliente = prompt(`Ingrese un producto que desea comprar puede elegir los siguientes anime: \n Psycho Pass \n Ghost in the Shell \n Akira`)
-    
+while (isNaN(cantidadProductos) && (cantidadProductos > 0)){
+    cantidadProductos = parseInt(prompt("Ingrese un valor válido(Númerico diferente mayor a 0)"))
 }
 
-console.log(peticionCliente);
+while (contador < cantidadProductos){
+    const titulo = prompt("Ingrese el título del anime que desea comprar")
+    const cantidad = parseInt(prompt("Ingrese la cantidad de productos que desea llevar"))
+    const pedidoActual = new producto(titulo,cantidad)
+    carrito.push(pedidoActual)
+    contador++
+}
 
+carrito.sort((a, b) => (a.nombre > b.nombre) ? 1 : -1);
 
- 
+console.log(carrito);
