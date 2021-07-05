@@ -10,11 +10,10 @@ class producto{
 
 let contador = 0;
 let cantidadProductos = parseInt(prompt("Indique cuantos productos distintos que desea comprar"));
-
 const carrito = [];
 
-while (isNaN(cantidadProductos)){
-    cantidadProductos = parseInt(prompt("Ingrese un valor válido(Númerico)"))
+while (isNaN(cantidadProductos) && (cantidadProductos > 0)){
+    cantidadProductos = parseInt(prompt("Ingrese un valor válido(Númerico diferente mayor a 0)"))
 }
 
 while (contador < cantidadProductos){
