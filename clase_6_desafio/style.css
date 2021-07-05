@@ -1,4 +1,11 @@
 body {
     background-color: black;
-    color: white;
+    
 }
+
+h1 {
+    color: rgb(255, 255, 255);
+    text-shadow: 6px 6px 6px rgb(0, 0, 0);
+  
+}
+
