@@ -1,12 +1,28 @@
 
 
+//Objeto paciente
+
+class Paciente {
+    constructor (nombre,sexo,edad,email,historia){
+        this.nombre = nombre;
+        this.sexo = sexo;
+        this.edad = edad;
+        this.email = email;
+        this.historia = historia; 
+    
+    }
+}
 // Uniendo elementos de HTML con JS 
 // Haciendo Llamado a los inputs
 let nombre = document.querySelector("#nombre");
 let sexo = document.querySelector("#sexo");
 let edad = document.querySelector("#edad");
 let email = document.querySelector("#email");
-let historia = document.querySelector("#historia");
+let historia = document.querySelector("#historial");
+
+//Haciendo Llamado a los Botones
+
+let guardar = document.querySelector("#botonGuardar");
 
 // Haciendo llamado a las Alerts 
 let refNombre = document.querySelector("#alertNombre");
@@ -15,7 +31,7 @@ let refEdad = document.querySelector("#alertEdad");
 let refEmail = document.querySelector("#alertEmail");
 let refHistoria = document.querySelector("#alertHistoria");
 
-//funciones
+//funciones inputs
 
 refNombre.style.display = "none";
 refSexo.style.display = "none";
@@ -31,7 +47,6 @@ function ocultarRefNombre(){
     refNombre.style.display = "none";
 }
 
-
 nombre.addEventListener("focus", mostrarRefNombre)
 nombre.addEventListener("blur", ocultarRefNombre)
 
@@ -43,8 +58,8 @@ function ocultarRefSexo(){
     refSexo.style.display = "none";
 }
 
-nombre.addEventListener("focus", mostrarRefSexo)
-nombre.addEventListener("blur", ocultarRefSexo)
+sexo.addEventListener("focus", mostrarRefSexo)
+sexo.addEventListener("blur", ocultarRefSexo)
 
 //
 
@@ -57,8 +72,8 @@ function ocultarRefEdad(){
     refEdad.style.display = "none";
 }
 
-nombre.addEventListener("focus", mostrarRefEdad)
-nombre.addEventListener("blur", ocultarRefEdad)
+edad.addEventListener("focus", mostrarRefEdad)
+edad.addEventListener("blur", ocultarRefEdad)
 
 //Email
 
@@ -69,8 +84,8 @@ function ocultarRefEmail(){
     refEmail.style.display = "none";
 }
 
-nombre.addEventListener("focus", mostrarRefEmail)
-nombre.addEventListener("blur", ocultarRefEmail)
+email.addEventListener("focus", mostrarRefEmail)
+email.addEventListener("blur", ocultarRefEmail)
 
 
 //Historia 
@@ -82,5 +97,21 @@ function ocultarRefHistoria(){
     refHistoria.style.display = "none";
 }
 
-nombre.addEventListener("focus", mostrarRefHistoria)
-nombre.addEventListener("blur", ocultarRefHistoria)
+historial.addEventListener("focus", mostrarRefHistoria)
+historial.addEventListener("blur", ocultarRefHistoria)
+
+
+//funciones botones 
+function guardarDatos(){
+    let nombreLocal = document.querySelector("#nombre").value;
+    let sexoLocal = document.querySelector("#sexo").value ;
+    let edadLocal  =document.querySelector("#edad").value ;
+    let emailLocal = document.querySelector("#email").value;
+    let historiaLocal = document.querySelector("#historial").value; 
+
+    let paciente = new Paciente(nombreLocal, sexoLocal, edadLocal, emailLocal, historiaLocal)
+    localStorage.setItem("paciente",JSON.stringify(paciente))
+
+}
+
+botonGuardar.addEventListener("click",guardarDatos);
