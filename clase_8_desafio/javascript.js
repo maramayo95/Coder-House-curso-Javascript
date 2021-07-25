@@ -111,7 +111,8 @@ function guardarDatos(){
 
     let paciente = new Paciente(nombreLocal, sexoLocal, edadLocal, emailLocal, historiaLocal)
     localStorage.setItem("paciente",JSON.stringify(paciente))
-
+    
+    
 }
 
 botonGuardar.addEventListener("click",guardarDatos);
