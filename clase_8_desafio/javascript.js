@@ -115,3 +115,9 @@ function guardarDatos(){
 }
 
 botonGuardar.addEventListener("click",guardarDatos);
+
+// Accordeon 
+let paciente = document.querySelector("#paciente");
+//Ocultar campo del paciente 
+paciente.style.display ="none";
+
