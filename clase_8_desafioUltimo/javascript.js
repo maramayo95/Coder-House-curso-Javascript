@@ -13,6 +13,10 @@ class Paciente {
     
     }
 }
+
+// Array de pacientes
+const pacienteArray = [];
+
 // Uniendo elementos de HTML con JS 
 // Haciendo Llamado a los inputs
 let nombre = document.querySelector("#nombre");
@@ -147,5 +151,9 @@ formulario.addEventListener("submit",e => {
     localStorage.setItem("paciente",JSON.stringify(paciente))
     // Adding Accordion
     accordion.innerHTML += eachPacient(paciente, 'id-'+id, 'idu-'+id);
+    pacienteArray.push(paciente);
     
 });
+
+//Muestra por consola el array de objetos
+console.log(pacienteArray);
