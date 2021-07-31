@@ -1,0 +1,35 @@
+body{
+    background-color: rgba(10, 10, 10, 0.986);
+}
+
+h1{
+    text-align:center;
+    color: white; 
+}
+
+h2 {
+    color: white; 
+    text-align:center;
+
+}
+
+
+h5 {
+    text-align: center;
+}
+
+h6 {
+    color: white;
+    text-align:center;
+}
+
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.822);
+}
+p {
+    color: white;
+    text-align:center;
+}
+
