@@ -22,8 +22,8 @@ let anime86 = new Anime ('Eighty Six',300);
 //  Creamos el array Carrito  
 let carrito = []; 
 
-//Enlace con html 
-
+//Enlace con html de botones
+/* 
 let airayuuki = document.querySelector('#button1');
 let akira = document.querySelector('#button2');
 let codeGeas = document.querySelector('#button3');
@@ -33,9 +33,28 @@ let evangelion = document.querySelector('#button6');
 let psychoPass = document.querySelector('#button7');
 let susei = document.querySelector('#button8');
 let eightySix = document.querySelector('#button9');
+ */
+let botonCompra = document.querySelectorAll('.btn');
+
+// Enlace con html de la seccion carrito
+let carritoHtml = document.querySelector('.carritoCompras');
+
+
+// carritoHtml.style.display = "none";
+
+
+//Funciones
+function ocultarCarrito(){
+    carritoHtml.style.display = "none"; 
+}
+
+function mostrarCarrito(){
+    carritoHtml.style.display = "block";
+}
 
 
 // Eventos 
+
 
 
 

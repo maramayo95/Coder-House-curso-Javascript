@@ -142,7 +142,7 @@ formulario.addEventListener("submit",e => {
     let id = uuidv4();
     let nombreLocal = document.querySelector("#nombre").value;
     let sexoLocal = document.querySelector("#sexo").value ;
-    let edadLocal  =document.querySelector("#edad").value ;
+    let edadLocal  = document.querySelector("#edad").value ;
     let emailLocal = document.querySelector("#email").value;
     let historiaLocal = document.querySelector("#historial").value; 
     // Create object
