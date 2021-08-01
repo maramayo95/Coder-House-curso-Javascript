@@ -33,3 +33,10 @@ p {
     text-align:center;
 }
 
+.filaUno {
+    background-color:rgba(0, 0, 0, 0.815);
+}
+
+.filaDos {
+    background-color: rgb(65, 65, 65);
+}
