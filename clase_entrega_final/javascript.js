@@ -6,6 +6,11 @@ agregarCarritoBotones.forEach(agregarAlCarritoBoton =>{agregarAlCarritoBoton.add
 
 function agregarAlCarritoClickeado(event) {
     const button = event.target; 
-    const item = button.closest('.elementoCarta');
-    console.log(item);
+    const elemento = button.closest('.elementoCarta');
+
+    const elementoTitulo = elemento.querySelector('.elementoTitulo').textContent;
+    const elementoPrecio = elemento.querySelector('.elementoPrecio').textContent; 
+
+  
+    
 }
