@@ -1,4 +1,4 @@
-const formulario = document.querySelector('#formulario');
+ formulario = document.querySelector('#formulario');
 const accordion = document.querySelector('#accordionExample')
 
 //Objeto paciente

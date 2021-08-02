@@ -1,6 +1,7 @@
 const agregarCarritoBotones = document.querySelectorAll('.botonesCarrito');
 const carritoCompras = document.querySelector('.carritoCompras')
 
+
 agregarCarritoBotones.forEach(agregarAlCarritoBoton =>{agregarAlCarritoBoton.addEventListener('click', agregarAlCarritoClickeado)} )
 
 
@@ -8,11 +9,14 @@ agregarCarritoBotones.forEach(agregarAlCarritoBoton =>{agregarAlCarritoBoton.add
 function agregarAlCarritoClickeado(event) {
     const button = event.target; 
     const elemento = button.closest('.elementoCarta');
-
     const elementoTitulo = elemento.querySelector('.elementoTitulo').textContent;
     const elementoPrecio = elemento.querySelector('.elementoPrecio').textContent; 
  agregarElementosAlCarrito(elementoTitulo,elementoPrecio);
 }
+
+const carritoSeccion = document.querySelector('.carritoSeccion')
+/* cuando pueda saber como colocar el condicional dejo este codigo
+ carritoSeccion.style.display = "none"*/ 
 
 
 function agregarElementosAlCarrito (elementoTitulo,elementoPrecio){
@@ -24,7 +28,7 @@ function agregarElementosAlCarrito (elementoTitulo,elementoPrecio){
   <div class="col-3"><p>Cantidad</p></div>
   <div class="col-3"><input type="number"></div>
   <div class="col-2"><p>${elementoPrecio}</p></div>
-  <div class="col-1"><button class="btn btn-danger">X</button></div>
+  <div class="col-1"><button class="borrar btn btn-danger">X</button></div>
   </div>
 
 </div>`
