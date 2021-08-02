@@ -1,4 +1,5 @@
 const agregarCarritoBotones = document.querySelectorAll('.botonesCarrito');
+const carritoCompras = document.querySelector('.carritoCompras')
 
 agregarCarritoBotones.forEach(agregarAlCarritoBoton =>{agregarAlCarritoBoton.addEventListener('click', agregarAlCarritoClickeado)} )
 
@@ -10,7 +11,25 @@ function agregarAlCarritoClickeado(event) {
 
     const elementoTitulo = elemento.querySelector('.elementoTitulo').textContent;
     const elementoPrecio = elemento.querySelector('.elementoPrecio').textContent; 
-
-  
-    
+ agregarElementosAlCarrito(elementoTitulo,elementoPrecio);
 }
+
+
+function agregarElementosAlCarrito (elementoTitulo,elementoPrecio){
+  const filaCarritoShopping =   document.createElement('div');
+  const contenidoCarritoShopping = `
+  <div class="carritoCompras">
+  <div class="row filaUno py-3">
+  <div class="col-3"><p>${elementoTitulo}</p> </div>
+  <div class="col-3"><p>Cantidad</p></div>
+  <div class="col-3"><input type="number"></div>
+  <div class="col-2"><p>${elementoPrecio}</p></div>
+  <div class="col-1"><button class="btn btn-danger">X</button></div>
+  </div>
+
+</div>`
+filaCarritoShopping.innerHTML = contenidoCarritoShopping 
+carritoCompras.append(filaCarritoShopping);
+
+}
+    
