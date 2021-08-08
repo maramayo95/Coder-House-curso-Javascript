@@ -1,30 +1,74 @@
  // Creamos la clase Anime para que tome como datos el título  y el precio
 class Anime {
-    constructor (nombre, precio){
+    constructor (nombre, precio, id ){
         this.nombre = nombre;
         this.precio = precio;
+        this.id = id; 
     }
 }
 
 // Creamos los objetos de mechas correspondientes 
 
-const animeAirayuuki = new Anime ('Airayuuki', 300)
-const animeAkira = new Anime ('Akira', 300);
-const animeCodeGeas = new Anime ('Code Geas' , 300);
-const animeDateAlive = new Anime ('Date Alive', 300);
-const animeGhost = new Anime ('Ghost', 300);
-const animeEvangelion = new Anime ('Evangelion' , 300);
-const animePsychoPass = new Anime ('Psycho Pass',300);
-const animeSusei = new Anime ('Susei',300);
-const anime86 = new Anime ('Eighty Six',300); 
+const animeAirayuuki = new Anime ('Airayuuki', 300, 'airayuuki' )
+const animeAkira = new Anime ('Akira', 300, 'akira');
+const animeCodeGeas = new Anime ('Code Geas' , 300, 'codeGeas');
+const animeDateAlive = new Anime ('Date Alive', 300, 'dateAlive');
+const animeGhost = new Anime ('Ghost', 300, 'ghost');
+const animeEvangelion = new Anime ('Evangelion' , 300, 'evangelion');
+const animePsychoPass = new Anime ('Psycho Pass',300, 'psychoPass');
+const animeSusei = new Anime ('Susei',300, 'susei');
+const anime86 = new Anime ('Eighty Six',300, 'eightySix'); 
 
 // Creamos un array de Objetos
 const animes = [animeAirayuuki, animeAkira, animeCodeGeas, animeDateAlive, animeGhost, animeEvangelion, animePsychoPass, animeSusei, anime86 ];
 
 
+// Creamos selectores de html
+const addToCart = document.querySelectorAll('.addToCart');
+
+//Almacenamiento en Local Storage
+let carrito ;
+if(localStorage.getItem("carrito") != null){
+   carrito = JSON.parse(localStorage.getItem("carrito"))
+} else {
+    carrito = [];
+}
+
+
+//Evento para agregar el carrito 
+for(let i = 0 ; i < addToCart.length; i++){
+    addToCart[i].addEventListener("click", (e)=>{
+        e.preventDefault()
+        const seleccionado = addToCart[i].getAttribute("data-nombre");
+        const busqueda =  animes.find(anime => anime.id == seleccionado);
+        if (busqueda){
+            carrito.push(busqueda)
+        } else{
+            alert("No se encontró el producto seleccionado")
+        }
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+    })
+    
+}
+
+
+// Funcion para inyectar HTML 
+const mostrarCarrito= () => {
+        const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
+        
+
+    }
 
 
 
+/* `
+  <div class="carritoCompras">
+  <div class="row filaUno py-3">
+  <div class="col-3"><p>${elementoTitulo}</p> </div>
+  <div class="col-3"><p>Cantidad</p></div>
+  <div class="col-3"><input type="number"></div>
+  <div class="col-2"><p>${elementoPrecio}</p></div>
+  <div class="col-1"><button class="borrar btn btn-danger">X</button></div>
+  </div>
 
-
-
+</div>` */
