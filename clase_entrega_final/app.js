@@ -67,7 +67,38 @@ const mostrarCarrito = () => {
     }
 
 
-// Funcion para hacer la suma de productos
-const sumaProductos = () => {
+
+
+
+
+    // Funcion para hacer la suma de productos
+/* const sumaProductos = () => {
     
+    const total = JSON.parse(localStorage.getItem());
+    console.log(total);
 }
+ */
+
+
+
+// bucle para recorrer localStorage
+/* for(var i = 0; i < localStorage.length; i++){
+    console.log(localStorage.getItem(localStorage.key(i)));
+  }
+ */
+
+// funcion para sumar todo el carrito
+const mostrarCarritoTotal = ()  => {
+const objetoCarrito = JSON.parse(localStorage.getItem("carrito"));
+console.log(objetoCarrito);
+
+
+const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
+    return acumulado + item.precio;
+  }, 0)
+
+  console.log(sumaTotal);
+}
+
+mostrarCarritoTotal();
+  
