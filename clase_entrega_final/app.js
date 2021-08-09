@@ -22,6 +22,7 @@ const anime86 = new Anime ('Eighty Six',300, 'eightySix');
 // Creamos un array de Objetos
 const animes = [animeAirayuuki, animeAkira, animeCodeGeas, animeDateAlive, animeGhost, animeEvangelion, animePsychoPass, animeSusei, anime86 ];
 
+const lista = document.querySelector('#carritoCompras');
 
 // Creamos selectores de html
 const addToCart = document.querySelectorAll('.addToCart');
@@ -47,28 +48,26 @@ for(let i = 0 ; i < addToCart.length; i++){
             alert("No se encontró el producto seleccionado")
         }
         localStorage.setItem("carrito", JSON.stringify(carrito))
+        mostrarCarrito();
     })
     
 }
 
 
 // Funcion para inyectar HTML 
-const mostrarCarrito= () => {
+const mostrarCarrito = () => {
         const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
         
+        carritoGuardado.forEach(item => {
+            const cartItem = document.createElement("li")
+            cartItem.textContent = `${item.nombre} $ ${item.precio}`;
+            lista.prepend(cartItem);
+        } )
 
     }
 
 
-
-/* `
-  <div class="carritoCompras">
-  <div class="row filaUno py-3">
-  <div class="col-3"><p>${elementoTitulo}</p> </div>
-  <div class="col-3"><p>Cantidad</p></div>
-  <div class="col-3"><input type="number"></div>
-  <div class="col-2"><p>${elementoPrecio}</p></div>
-  <div class="col-1"><button class="borrar btn btn-danger">X</button></div>
-  </div>
-
-</div>` */
+// Funcion para hacer la suma de productos
+const sumaProductos = () => {
+    
+}
