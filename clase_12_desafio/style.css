@@ -19,6 +19,11 @@ h2 {
 
 }
 
+h3 {
+    text-align: center;
+    color: white;
+}
+
 
 h5 {
     text-align: center;
@@ -45,4 +50,9 @@ p {
 
 .filaDos {
     background-color: rgb(65, 65, 65);
+}
+
+.carritoJquery {
+    background-color: rgba(206, 105, 105, 0.562); 
+    
 }

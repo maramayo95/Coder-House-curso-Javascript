@@ -94,3 +94,5 @@ function borrarLocal(e){
 
 
 //falta crear un boton que vaya en cada item del carrito para que pueda borrarse
+
+
