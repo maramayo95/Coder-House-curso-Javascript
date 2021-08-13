@@ -43,14 +43,33 @@ $(".card-body").on("mouseover", function(){
 
 $(".card-body").on("mouseleave", function(){
     $(this).css("background-color", "rgba(19, 17, 17, 0.63)");
+  
+    
 })
 
 $(".elementoCarta").on("mouseover", function(){
     $(this).css("box-shadow", "2px 5px 5px 2px #EB341B");
+   
+    
+  
 })
 
 
 $(".elementoCarta").on("mouseleave", function(){
     $(this).css("box-shadow", "none");
+    
 })
+
+
+
+
+    $(".card-title").css("color", "red")
+    .fadeIn(2000)
+    .delay(2000)
+    .fadeOut(2000);
+    
+
+
+
+
 
