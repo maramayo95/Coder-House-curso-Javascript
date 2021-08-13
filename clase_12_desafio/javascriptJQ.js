@@ -62,7 +62,7 @@ $(".elementoCarta").on("mouseleave", function(){
 
 
 
-
+// deasfio animacion concatenada
     $(".card-title").css("color", "red")
     .fadeIn(2000)
     .delay(2000)
