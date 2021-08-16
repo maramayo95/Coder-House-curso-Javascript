@@ -38,8 +38,6 @@ if(localStorage.getItem("carrito") != null){
 
 
 
-
-
 //Evento para agregar el carrito 
 for(let i = 0 ; i < addToCart.length; i++){
     addToCart[i].addEventListener("click", (e)=>{
@@ -80,17 +78,10 @@ const mostrarCarrito = () => {
                     eliminarItem.addEventListener("click",eliminarElemento);
                     function eliminarElemento(){
                         const elementoEliminado = carritoCompras.removeChild(listaHtml);
-                        console.log("Elemento Eliminado");
-                        console.log(listaHtml);   
-                        
+                       const borrarItem =  localStorage.removeItem();
+                      
                     }
-                    
-      
-
         } )
-       
-
-   
     }
 
    
@@ -98,20 +89,18 @@ const mostrarCarrito = () => {
 // funcion para sumar todo el carrito
 
 const mostrarCarritoTotal = ()  => {
-  
+
 const objetoCarrito = JSON.parse(localStorage.getItem("carrito"));
 const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
     return acumulado + item.precio;
   }, 0)
   
  const guardarSumaTotal = JSON.stringify(localStorage.setItem('Total', sumaTotal)); 
-  
-}
+} 
+
 mostrarCarritoTotal();
-/* 
-if (mostrarCarritoTotal() = null ) {
-    console.log("No hagas una mierda");
-} */
+
+
 
 // boton para borrar todo el carrito de compras
 const botonBorrarTotal = document.querySelector('#botonBorrarTotal');
@@ -121,7 +110,7 @@ function borrarLocal(e){
     localStorage.clear();
 
     //Falta agregar para que borre el html impreso
-    
+
 }
 
 
