@@ -61,26 +61,28 @@ const mostrarCarrito = () => {
             const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
         
             carritoGuardado.forEach(item => {
-            const cartItem = document.createElement("li")
-            cartItem.setAttribute("class","listaEliminar")
-            cartItem.textContent = `${item.nombre} $ ${item.precio}`;
-            lista.prepend(cartItem);
-            const button= document.createElement('button');
-            button.setAttribute("class","botonEliminar btn btn-danger ");
-            button.appendChild(document.createTextNode('X'));
-            cartItem.appendChild(button);
+                const cartItem = document.createElement("li")
+                cartItem.setAttribute("class","listaEliminar")
+                cartItem.textContent = `${item.nombre} $ ${item.precio}`;
+                lista.prepend(cartItem);
+                const button= document.createElement('button');
+                button.setAttribute("class","botonEliminar btn btn-danger ");
+                button.appendChild(document.createTextNode('X'));
+                cartItem.appendChild(button);
       
                 // Boton para Eliminar un elemento en un carrito de compras
 
                 const eliminarItem = document.querySelector('.botonEliminar');
                 const listaHtml = document.querySelector('.listaEliminar'); 
                     //CREAR FUNCION PARA ELIMINAR ELEMENTOS HTML Y ELIMINARLO DIRECTAMENTE DEL JSON 
-                    eliminarItem.addEventListener("click",eliminarElemento);
-                    function eliminarElemento(){
-                        const elementoEliminado = carritoCompras.removeChild(listaHtml);
-                       const borrarItem =  localStorage.removeItem();
-                      
-                    }
+                eliminarItem.addEventListener("click",eliminarElemento);
+                function eliminarElemento(){
+                    const elementoEliminado = carritoCompras.removeChild(listaHtml);
+                /*  function eliminarItemStorage(){
+
+                } */
+                
+                }
         } )
     }
 
