@@ -36,6 +36,10 @@ if(localStorage.getItem("carrito") != null){
 }
 
 
+
+
+
+
 //Evento para agregar el carrito 
 for(let i = 0 ; i < addToCart.length; i++){
     addToCart[i].addEventListener("click", (e)=>{
@@ -56,22 +60,45 @@ for(let i = 0 ; i < addToCart.length; i++){
 
 // Funcion para inyectar HTML 
 const mostrarCarrito = () => {
-        const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
+            const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
         
-/*         carritoGuardado.forEach(item => {
+            carritoGuardado.forEach(item => {
             const cartItem = document.createElement("li")
+            cartItem.setAttribute("class","listaEliminar")
             cartItem.textContent = `${item.nombre} $ ${item.precio}`;
             lista.prepend(cartItem);
+            const button= document.createElement('button');
+            button.setAttribute("class","botonEliminar btn btn-danger ");
+            button.appendChild(document.createTextNode('X'));
+            cartItem.appendChild(button);
       
+                // Boton para Eliminar un elemento en un carrito de compras
+
+                const eliminarItem = document.querySelector('.botonEliminar');
+                const listaHtml = document.querySelector('.listaEliminar'); 
+                    //CREAR FUNCION PARA ELIMINAR ELEMENTOS HTML Y ELIMINARLO DIRECTAMENTE DEL JSON 
+                    eliminarItem.addEventListener("click",eliminarElemento);
+                    function eliminarElemento(){
+                        const elementoEliminado = carritoCompras.removeChild(listaHtml);
+                        console.log("Elemento Eliminado");
+                        console.log(listaHtml);   
+                        
+                    }
+                    
+      
+
         } )
-            CREAR BOTON PARA CADA LI 
- 
-        */
+       
+
+   
     }
 
+   
     
 // funcion para sumar todo el carrito
+
 const mostrarCarritoTotal = ()  => {
+  
 const objetoCarrito = JSON.parse(localStorage.getItem("carrito"));
 const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
     return acumulado + item.precio;
@@ -81,6 +108,10 @@ const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
   
 }
 mostrarCarritoTotal();
+/* 
+if (mostrarCarritoTotal() = null ) {
+    console.log("No hagas una mierda");
+} */
 
 // boton para borrar todo el carrito de compras
 const botonBorrarTotal = document.querySelector('#botonBorrarTotal');
@@ -90,6 +121,7 @@ function borrarLocal(e){
     localStorage.clear();
 
     //Falta agregar para que borre el html impreso
+    
 }
 
 
