@@ -89,7 +89,7 @@ const mostrarCarrito = () => {
 // funcion para sumar todo el carrito
 
 const mostrarCarritoTotal = ()  => {
-
+if (objetoCarrito != []){
 const objetoCarrito = JSON.parse(localStorage.getItem("carrito"));
 const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
     return acumulado + item.precio;
@@ -99,6 +99,7 @@ const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
 } 
 
 mostrarCarritoTotal();
+}
 
 
 
