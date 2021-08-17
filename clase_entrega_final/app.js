@@ -118,12 +118,12 @@ const objetoCarrito = JSON.parse(localStorage.getItem("carrito"));
 const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
     return acumulado + item.precio;
   }, 0)
-  
  const guardarSumaTotal = JSON.stringify(localStorage.setItem('Total', sumaTotal)); 
+ mostrarCarritoTotal();
 } 
-
-mostrarCarritoTotal();
 }
+
+
 
 
 
