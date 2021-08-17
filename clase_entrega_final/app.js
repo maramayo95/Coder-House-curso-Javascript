@@ -141,7 +141,7 @@ function borrarLocal(e){
 
 //falta crear un boton que vaya en cada item del carrito para que pueda borrarse
 
-//Funcion para que cuando cargue la pagina y este lista muestre el carrito  
+//Funcion para que cuando cargue la pagina y este lista muestre el carrito con JQUERY 
 $(document).ready(function() {
     mostrarCarrito();
 });
