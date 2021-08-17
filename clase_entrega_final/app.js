@@ -28,11 +28,14 @@ const lista = document.querySelector('#carritoCompras');
 const addToCart = document.querySelectorAll('.addToCart');
 
 //Almacenamiento en Local Storage
+function obtenerCarrito() {
 let carrito ;
 if(localStorage.getItem("carrito") != null){
    carrito = JSON.parse(localStorage.getItem("carrito"))
 } else {
     carrito = [];
+}
+return carrito
 }
 
 
@@ -42,6 +45,8 @@ if(localStorage.getItem("carrito") != null){
 for(let i = 0 ; i < addToCart.length; i++){
     addToCart[i].addEventListener("click", (e)=>{
         e.preventDefault()
+        //Obtengo la ultima version de carrito en este scope
+        const carrito = obtenerCarrito();
         const seleccionado = addToCart[i].getAttribute("data-nombre");
         const busqueda =  animes.find(anime => anime.id == seleccionado);
         if (busqueda){
@@ -56,11 +61,13 @@ for(let i = 0 ; i < addToCart.length; i++){
 }
 
 
+
 // Funcion para inyectar HTML 
 const mostrarCarrito = () => {
             const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
-        
+            lista.querySelectorAll(".listaEliminar").forEach((item) => item.remove())
             carritoGuardado.forEach(item => {
+                
                 const cartItem = document.createElement("li")
                 cartItem.setAttribute("class","listaEliminar")
                 cartItem.textContent = `${item.nombre} $ ${item.precio}`;
@@ -77,14 +84,29 @@ const mostrarCarrito = () => {
                     //CREAR FUNCION PARA ELIMINAR ELEMENTOS HTML Y ELIMINARLO DIRECTAMENTE DEL JSON 
                 eliminarItem.addEventListener("click",eliminarElemento);
                 function eliminarElemento(){
+                    //Shadowing
+                    const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
                     const elementoEliminado = carritoCompras.removeChild(listaHtml);
-                /*  function eliminarItemStorage(){
+                    const nuevoCarrito = [];
+                    let encontrado = false;
+                    // Iteramos todos los elementos en carrito guardado y eliminamos uno solo que matche con el item que estamos
+                    // eliminando 
+                    for (let index = 0; index < carritoGuardado.length; index++) {
+                        const producto = carritoGuardado[index];
+                       if (producto.id == item.id && encontrado == false ){
+                           encontrado = true;
+                       } else {
+                           nuevoCarrito.push(producto);
+                       }
+                    }
+                    
+                    //Reemplazo antiguo carrito por nuevo carrito
+                    localStorage.setItem("carrito",JSON.stringify(nuevoCarrito))
 
-                } */
-                
                 }
         } )
     }
+
 
    
     
@@ -118,3 +140,8 @@ function borrarLocal(e){
 
 
 //falta crear un boton que vaya en cada item del carrito para que pueda borrarse
+
+//Funcion para que cuando cargue la pagina y este lista muestre el carrito  
+$(document).ready(function() {
+    mostrarCarrito();
+});
