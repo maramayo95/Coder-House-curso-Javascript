@@ -35,7 +35,9 @@ if(localStorage.getItem("carrito") != null){
 } else {
     carrito = [];
 }
+
 return carrito
+
 }
 
 
@@ -56,6 +58,8 @@ for(let i = 0 ; i < addToCart.length; i++){
         }
         localStorage.setItem("carrito", JSON.stringify(carrito))
         mostrarCarrito();
+        
+        
     })
     
 }
@@ -108,26 +112,21 @@ const mostrarCarrito = () => {
     }
 
 
-   
-    
-// funcion para sumar todo el carrito
+// Funcion para sumar todos los productos del carrito utilizando el método .reduce 
 
-const mostrarCarritoTotal = ()  => {
-if (objetoCarrito != []){
-const objetoCarrito = JSON.parse(localStorage.getItem("carrito"));
-const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
-    return acumulado + item.precio;
-  }, 0)
- const guardarSumaTotal = JSON.stringify(localStorage.setItem('Total', sumaTotal)); 
- mostrarCarritoTotal();
-} 
+const mostrarCarritoTotal = () => {
+   // const objetoCarrito = obtenerCarrito();
+   const objetoCarrito = localStorage.getItem("carrito");
+    const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
+        return acumulado + item.precio;
+    }, 0)
+    const totalCompra = document.querySelector('.totalCompra');
+    totalCompra.textContent = `Total $ ${sumaTotal}`
+    
 }
 
 
-
-
-
-// boton para borrar todo el carrito de compras
+/* // boton para borrar todo el carrito de compras BORRAR
 const botonBorrarTotal = document.querySelector('#botonBorrarTotal');
 const accionBorrar = botonBorrarTotal.addEventListener('click', borrarLocal);
 function borrarLocal(e){
@@ -135,11 +134,10 @@ function borrarLocal(e){
     localStorage.clear();
 
     //Falta agregar para que borre el html impreso
+} */
 
-}
 
 
-//falta crear un boton que vaya en cada item del carrito para que pueda borrarse
 
 //Funcion para que cuando cargue la pagina y este lista muestre el carrito con JQUERY 
 $(document).ready(function() {
