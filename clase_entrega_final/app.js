@@ -143,3 +143,27 @@ function borrarLocal(e){
 $(document).ready(function() {
     mostrarCarrito();
 });
+
+$(".card-body").on("mouseover", function(){
+    $(this).css("background-color", "rgba(19, 17, 17, 0.815)");
+})
+
+
+$(".card-body").on("mouseleave", function(){
+    $(this).css("background-color", "rgba(19, 17, 17, 0.63)");
+  
+    
+})
+
+$(".elementoCarta").on("mouseover", function(){
+    $(this).css("box-shadow", "2px 5px 5px 2px #EB341B");
+   
+    
+  
+})
+
+
+$(".elementoCarta").on("mouseleave", function(){
+    $(this).css("box-shadow", "none");
+    
+})
