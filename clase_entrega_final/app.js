@@ -106,35 +106,30 @@ const mostrarCarrito = () => {
                     
                     //Reemplazo antiguo carrito por nuevo carrito
                     localStorage.setItem("carrito",JSON.stringify(nuevoCarrito))
-
+                    mostrarCarritoTotal()
                 }
         } )
+        
     }
+
 
 
 // Funcion para sumar todos los productos del carrito utilizando el método .reduce 
 
 const mostrarCarritoTotal = () => {
    // const objetoCarrito = obtenerCarrito();
-   const objetoCarrito = localStorage.getItem("carrito");
+   const objetoCarrito = JSON.parse(localStorage.getItem("carrito"));
     const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
         return acumulado + item.precio;
     }, 0)
     const totalCompra = document.querySelector('.totalCompra');
-    totalCompra.textContent = `Total $ ${sumaTotal}`
+    totalCompra.textContent = `Total $ ${sumaTotal}`;
     
 }
 
+mostrarCarritoTotal()
 
-/* // boton para borrar todo el carrito de compras BORRAR
-const botonBorrarTotal = document.querySelector('#botonBorrarTotal');
-const accionBorrar = botonBorrarTotal.addEventListener('click', borrarLocal);
-function borrarLocal(e){
-    e.preventDefault();
-    localStorage.clear();
 
-    //Falta agregar para que borre el html impreso
-} */
 
 
 
