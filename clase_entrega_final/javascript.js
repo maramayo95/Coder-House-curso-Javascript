@@ -48,3 +48,5 @@ function actualizarTotalCarrito () {
   const carritoComprasSuma = document.querySelectorAll('.carritoCompras')
 
 }
+
+
