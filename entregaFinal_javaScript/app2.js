@@ -59,7 +59,6 @@ for(let i = 0 ; i < addToCart.length; i++){
         localStorage.setItem("carrito", JSON.stringify(carrito))
         mostrarCarrito();
         
-        
     })
     
 }
@@ -87,7 +86,8 @@ const mostrarCarrito = () => {
                 const listaHtml = document.querySelector('.listaEliminar'); 
                     //CREAR FUNCION PARA ELIMINAR ELEMENTOS HTML Y ELIMINARLO DIRECTAMENTE DEL JSON 
                 eliminarItem.addEventListener("click",eliminarElemento);
-                function eliminarElemento(){
+                function eliminarElemento(e){
+                    e.preventDefault()
                     //Shadowing
                     const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
                     const elementoEliminado = carritoCompras.removeChild(listaHtml);
@@ -109,9 +109,8 @@ const mostrarCarrito = () => {
                     mostrarCarritoTotal()
                 }
         } )
-        
+        mostrarCarritoTotal()
     }
-
 
 
 // Funcion para sumar todos los productos del carrito utilizando el método .reduce 
@@ -119,29 +118,31 @@ const mostrarCarrito = () => {
 const mostrarCarritoTotal = () => {
    // const objetoCarrito = obtenerCarrito();
    const objetoCarrito = JSON.parse(localStorage.getItem("carrito"));
-    const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
-        return acumulado + item.precio;
-    }, 0)
+   if(objetoCarrito.lenght == 0){
     const totalCompra = document.querySelector('.totalCompra');
-    totalCompra.textContent = `Total $ ${sumaTotal}`;
+    totalCompra.textContent = `Total $ 0`
+    }
+    console.log(objetoCarrito)
+       const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
+           return acumulado + item.precio;
+       }, 0)
+       const totalCompra = document.querySelector('.totalCompra');
+       totalCompra.textContent = `Total $ ${sumaTotal}`
+   
     
 }
 
+mostrarCarritoTotal()
+/* // boton para borrar todo el carrito de compras BORRAR
+const botonBorrarTotal = document.querySelector('#botonBorrarTotal');
+const accionBorrar = botonBorrarTotal.addEventListener('click', borrarLocal);
+function borrarLocal(e){
+    e.preventDefault();
+    localStorage.clear();
 
+    //Falta agregar para que borre el html impreso
+} */
 
-
-// Boton para confirmar compra
-
-/* const confirmarCompra = document.querySelector("#confirmarCompra");
-
-confirmarCompra.addEventListener("click",mensaje);
-
-    function mensaje (){
-        alert("Su compra ha sido realizada con éxito");
-    }
- */
-
-    mostrarCarritoTotal()
 
 
 
