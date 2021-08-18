@@ -30,13 +30,30 @@ $(".elementoCarta").on("mouseleave", function(){
 
 // API DOLAR
 
-//Declaramos la url que vamos a usar para el GET
-const URLGET ="https://www.dolarsi.com/api/api.php?type=valoresprincipales"
+/******************** API del dólar  *********************/
 
-
-// AGREGAMOS UN BOTON CON JQUERY 
-
-
-// ESCUCHAMOS EL EVENTO CLICK DEL BOTON AGREGADO
-
+const urlDolar = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
+/** Agregamos un botón con jQuery **/
+$("#cotizacion").append(`<button id="btnCotizador" class="col-2 fs-6 text-light btn btn-danger m-2">Cotizador</button>`);
+/** Escuchamos el evento click del botón agregado **/
+$("#btnCotizador").click(()=>{
+    
+    $.get(urlDolar, function(respuesta, estado) {
+        if (estado === "success") {
+            // console.log(respuesta);
+            respuesta.forEach(element => {
+                console.log(element.casa);
+                $("#respuestaCotizacion").append(`
+                <div class="col-12 bg-dark text-white text-center m-2">
+                    <h2>${element.casa.nombre}</h2>
+                    <p class="text-danger">${element.casa.compra}</p>
+                    <p class="text-primary">${element.casa.venta}</p>
+                </div>`);
+                /*  console.log(element.casa.nombre);
+                 console.log(element.casa.compra);
+                 console.log(element.casa.venta); */
+            })
+        }
+    })
+});
 
