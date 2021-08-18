@@ -71,42 +71,42 @@ const mostrarCarrito = () => {
             lista.querySelectorAll(".listaEliminar").forEach((item) => item.remove())
             carritoGuardado.forEach(item => {
                 
-                const cartItem = document.createElement("li")
-                cartItem.setAttribute("class","listaEliminar")
-                cartItem.textContent = `${item.nombre} $ ${item.precio}`;
-                lista.prepend(cartItem);
-                const button= document.createElement('button');
-                button.setAttribute("class","botonEliminar btn btn-danger ");
-                button.appendChild(document.createTextNode('X'));
-                cartItem.appendChild(button);
-      
-                // Boton para Eliminar un elemento en un carrito de compras
+            const cartItem = document.createElement("li")
+            cartItem.setAttribute("class","listaEliminar")
+            cartItem.textContent = `${item.nombre} $ ${item.precio}`;
+            lista.prepend(cartItem);
+            const button= document.createElement('button');
+            button.setAttribute("class","botonEliminar btn btn-danger ");
+            button.appendChild(document.createTextNode('X'));
+            cartItem.appendChild(button);
+    
+            // Boton para Eliminar un elemento en un carrito de compras
 
-                const eliminarItem = document.querySelector('.botonEliminar');
-                const listaHtml = document.querySelector('.listaEliminar'); 
-                    //CREAR FUNCION PARA ELIMINAR ELEMENTOS HTML Y ELIMINARLO DIRECTAMENTE DEL JSON 
-                eliminarItem.addEventListener("click",eliminarElemento);
-                function eliminarElemento(e){
-                    e.preventDefault()
-                    //Shadowing
-                    const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
-                    const elementoEliminado = carritoCompras.removeChild(listaHtml);
-                    const nuevoCarrito = [];
-                    let encontrado = false;
-                    // Iteramos todos los elementos en carrito guardado y eliminamos uno solo que matche con el item que estamos
-                    // eliminando 
-                    for (let index = 0; index < carritoGuardado.length; index++) {
-                        const producto = carritoGuardado[index];
-                       if (producto.id == item.id && encontrado == false ){
-                           encontrado = true;
-                       } else {
-                           nuevoCarrito.push(producto);
-                       }
+            const eliminarItem = document.querySelector('.botonEliminar');
+            const listaHtml = document.querySelector('.listaEliminar'); 
+                //CREAR FUNCION PARA ELIMINAR ELEMENTOS HTML Y ELIMINARLO DIRECTAMENTE DEL JSON 
+            eliminarItem.addEventListener("click",eliminarElemento);
+            function eliminarElemento(e){
+                e.preventDefault()
+                //Shadowing
+                const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
+                const elementoEliminado = carritoCompras.removeChild(listaHtml);
+                const nuevoCarrito = [];
+                let encontrado = false;
+                // Iteramos todos los elementos en carrito guardado y eliminamos uno solo que matche con el item que estamos
+                // eliminando 
+                for (let index = 0; index < carritoGuardado.length; index++) {
+                    const producto = carritoGuardado[index];
+                    if (producto.id == item.id && encontrado == false ){
+                        encontrado = true;
+                    } else {
+                        nuevoCarrito.push(producto);
                     }
-                    
-                    //Reemplazo antiguo carrito por nuevo carrito
-                    localStorage.setItem("carrito",JSON.stringify(nuevoCarrito))
-                    mostrarCarritoTotal()
+                }
+                
+                //Reemplazo antiguo carrito por nuevo carrito
+                localStorage.setItem("carrito",JSON.stringify(nuevoCarrito))
+                mostrarCarritoTotal()
                 }
         } )
         mostrarCarritoTotal()
@@ -115,22 +115,22 @@ const mostrarCarrito = () => {
 
 // Funcion para sumar todos los productos del carrito utilizando el método .reduce 
 
-const mostrarCarritoTotal = () => {
-   // const objetoCarrito = obtenerCarrito();
-   const objetoCarrito = JSON.parse(localStorage.getItem("carrito"));
-   if(objetoCarrito.lenght == 0){
-    const totalCompra = document.querySelector('.totalCompra');
-    totalCompra.textContent = `Total $ 0`
-    }
-    console.log(objetoCarrito)
-       const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
-           return acumulado + item.precio;
-       }, 0)
-       const totalCompra = document.querySelector('.totalCompra');
-       totalCompra.textContent = `Total $ ${sumaTotal}`
-   
+    const mostrarCarritoTotal = () => {
+    // const objetoCarrito = obtenerCarrito();
+    const objetoCarrito = JSON.parse(localStorage.getItem("carrito"));
+    if(objetoCarrito.lenght == 0){
+        const totalCompra = document.querySelector('.totalCompra');
+        totalCompra.textContent = `Total $ 0`
+        }
+        console.log(objetoCarrito)
+        const sumaTotal = objetoCarrito.reduce((acumulado, item) => {
+            return acumulado + item.precio;
+        }, 0)
+        const totalCompra = document.querySelector('.totalCompra');
+        totalCompra.textContent = `Total $ ${sumaTotal}`
     
-}
+        
+    }
 
 mostrarCarritoTotal()
 /* // boton para borrar todo el carrito de compras BORRAR
