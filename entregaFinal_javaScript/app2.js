@@ -133,15 +133,6 @@ const mostrarCarrito = () => {
     }
 
 mostrarCarritoTotal()
-/* // boton para borrar todo el carrito de compras BORRAR
-const botonBorrarTotal = document.querySelector('#botonBorrarTotal');
-const accionBorrar = botonBorrarTotal.addEventListener('click', borrarLocal);
-function borrarLocal(e){
-    e.preventDefault();
-    localStorage.clear();
-
-    //Falta agregar para que borre el html impreso
-} */
 
 
 
